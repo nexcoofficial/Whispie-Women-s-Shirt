@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispie Women's Shirt - Kemeja Stripe Premium</title>
+    <meta name="description" content="Upgrade gaya harianmu dengan Whispie Women's Shirt kemeja stripe vertikal yang memberi kesan ramping dan jenjang. Bahan semi wool adem dan nyaman.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'chocolate-dark': '#654321',
+                        'chocolate-medium': '#8b4513',
+                        'tan': '#d2691e',
+                        'cream': '#f5f5dc',
+                        'sage': '#87a96b'
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'source': ['Source Sans Pro', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom CSS for premium effects */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(101, 67, 33, 0.8) 0%, rgba(139, 69, 19, 0.6) 100%);
+        }
+        
+        .color-option {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .color-option.active {
+            border: 3px solid #87a96b;
+            transform: scale(1.05);
+        }
+        
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-proof-popup {
+            animation: slideInRight 0.5s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .fade-out {
+            animation: fadeOut 0.5s ease-out;
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .carousel-container {
+            scroll-behavior: smooth;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d2691e;
+            opacity: 0.5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+        
+        .countdown-timer {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #8b4513;
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #654321;
+        }
+    </style>
+</head>
+<body class="font-source text-gray-800 bg-gradient-to-br from-cream to-orange-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="font-lato font-bold text-2xl text-chocolate-dark">Whispie</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#product" class="text-gray-700 hover:text-chocolate-medium transition">Produk</a>
+                    <a href="#testimoni" class="text-gray-700 hover:text-chocolate-medium transition">Testimoni</a>
+                    <a href="#order" class="text-gray-700 hover:text-chocolate-medium transition">Pesan</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/50 z-40 hidden">
+        <div class="absolute right-0 top-0 h-full w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <button id="close-menu" class="float-right text-2xl">&times;</button>
+                <nav class="mt-8 space-y-4">
+                    <a href="#product" class="block py-2 text-gray-700">Produk</a>
+                    <a href="#testimoni" class="block py-2 text-gray-700">Testimoni</a>
+                    <a href="#order" class="block py-2 text-gray-700">Pesan</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rau6-matgiqs7vnqr5b.webp" 
+             alt="Whispie Women's Shirt" 
+             class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="font-lato font-black text-4xl md:text-6xl lg:text-7xl mb-4 leading-tight">
+                Whispie Women's Shirt
+            </h1>
+            <p class="font-source text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto">
+                Upgrade gaya harianmu dengan kemeja stripe premium yang memberi kesan ramping dan jenjang
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('product')" 
+                        class="bg-sage hover:bg-sage/90 text-white px-8 py-4 rounded-lg font-lato font-bold text-lg transition transform hover:scale-105">
+                    Lihat Produk
+                </button>
+                <button onclick="scrollToSection('order')" 
+                        class="border-2 border-white hover:bg-white hover:text-chocolate-dark text-white px-8 py-4 rounded-lg font-lato font-bold text-lg transition">
+                    Pesan Sekarang
+                </button>
+            </div>
+            <div class="mt-12 flex justify-center space-x-8 text-sm">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-2xl mb-2"></i>
+                    <p>Garansi 7 Hari</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-shipping-fast text-2xl mb-2"></i>
+                    <p>Gratis Ongkir</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-medal text-2xl mb-2"></i>
+                    <p>Premium Quality</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Product Gallery -->
+                <div>
+                    <div class="relative">
+                        <img id="main-image" 
+                             src="https://down-id.img.susercontent.com/file/sg-11134201-7rau6-matgiqs7vnqr5b.webp" 
+                             alt="Whispie Women's Shirt" 
+                             class="w-full rounded-lg shadow-lg">
+                        <button onclick="openLightbox('https://down-id.img.susercontent.com/file/sg-11134201-7rau6-matgiqs7vnqr5b.webp')" 
+                                class="absolute top-4 right-4 bg-white/80 rounded-full p-2 hover:bg-white transition">
+                            <i class="fas fa-expand text-chocolate-dark"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 mt-4">
+                        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rau6-matgiqs7vnqr5b.webp" 
+                             onclick="changeImage('https://down-id.img.susercontent.com/file/sg-11134201-7rau6-matgiqs7vnqr5b.webp', this)" 
+                             class="w-full h-20 object-cover rounded cursor-pointer hover:opacity-80 transition">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkb-maldmrc17s2h64.webp" 
+                             onclick="changeImage('https://down-id.img.susercontent.com/file/id-11134207-7rbkb-maldmrc17s2h64.webp', this)" 
+                             class="w-full h-20 object-cover rounded cursor-pointer hover:opacity-80 transition">
+                        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rasi-manj61x99dh22b.webp" 
+                             onclick="changeImage('https://down-id.img.susercontent.com/file/sg-11134201-7rasi-manj61x99dh22b.webp', this)" 
+                             class="w-full h-20 object-cover rounded cursor-pointer hover:opacity-80 transition">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbke-maldmrc1kf6h99.webp" 
+                             onclick="changeImage('https://down-id.img.susercontent.com/file/id-11134207-7rbke-maldmrc1kf6h99.webp', this)" 
+                             class="w-full h-20 object-cover rounded cursor-pointer hover:opacity-80 transition">
+                    </div>
+                </div>
+
+                <!-- Product Details -->
+                <div>
+                    <h2 class="font-lato font-black text-3xl mb-4">Whispie Women's Shirt</h2>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600">4.9 (127 reviews)</span>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <span class="text-3xl font-lato font-bold text-sage">Rp 188.000</span>
+                        <span class="text-xl text-gray-500 line-through ml-3">Rp 396.000</span>
+                        <span class="ml-3 bg-red-100 text-red-800 text-sm px-2 py-1 rounded">-53%</span>
+                    </div>
+
+                    <!-- Color Variants -->
+                    <div class="mb-6">
+                        <h3 class="font-lato font-bold text-lg mb-3">Pilih Warna</h3>
+                        <div class="grid grid-cols-5 gap-2">
+                            <div class="color-option active" data-color="Hitam">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbka-maldmrc1j0m197@resize_w450_nl.webp" 
+                                     alt="Hitam" 
+                                     class="w-full h-24 object-cover rounded">
+                                <p class="text-center text-sm mt-1">Hitam</p>
+                            </div>
+                            <div class="color-option" data-color="White">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk1-maldp40janhn27@resize_w450_nl.webp" 
+                                     alt="Putih" 
+                                     class="w-full h-24 object-cover rounded">
+                                <p class="text-center text-sm mt-1">Putih</p>
+                            </div>
+                            <div class="color-option" data-color="Baby Pink">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mcnl58rzl1kf8c@resize_w450_nl.webp" 
+                                     alt="Baby Pink" 
+                                     class="w-full h-24 object-cover rounded">
+                                <p class="text-center text-sm mt-1">Baby Pink</p>
+                            </div>
+                            <div class="color-option" data-color="Navy">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbke-maldmrc1kf6h99@resize_w450_nl.webp" 
+                                     alt="Navy" 
+                                     class="w-full h-24 object-cover rounded">
+                                <p class="text-center text-sm mt-1">Navy</p>
+                            </div>
+                            <div class="color-option" data-color="Coffee">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbke-maldp40jdgmj06@resize_w450_nl.webp" 
+                                     alt="Coffee" 
+                                     class="w-full h-24 object-cover rounded">
+                                <p class="text-center text-sm mt-1">Coffee</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Size Selection -->
+                    <div class="mb-6">
+                        <h3 class="font-lato font-bold text-lg mb-3">Pilih Ukuran</h3>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="size" value="Standar" checked class="mr-2">
+                                <span>Standar (S-M)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="size" value="Jumbo" class="mr-2">
+                                <span>Jumbo (L-XL)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div class="bg-gradient-to-r from-red-500 to-red-600 text-white p-4 rounded-lg mb-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="font-lato font-bold">Promo Berakhir Dalam</p>
+                                <p class="text-sm">Segera pesan sebelum kehabisan!</p>
+                            </div>
+                            <div class="countdown-timer text-2xl" id="countdown">
+                                23:59:59
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="scrollToSection('order')" 
+                            class="w-full bg-sage hover:bg-sage/90 text-white py-4 rounded-lg font-lato font-bold text-lg transition transform hover:scale-105">
+                        Pesan Sekarang - Rp 188.000
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gradient-to-br from-cream to-orange-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-lato font-black text-2xl text-center mb-8">Fitur Unggulan</h2>
+            <div class="space-y-6">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-sage w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-tshirt text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-lato font-bold text-base">Bahan Semi-Wool Premium</h3>
+                        <p class="text-sm text-gray-600">Adem, ringan, dan jatuh sempurna</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="bg-sage w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-star text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-lato font-bold text-base">Stripe Vertikal</h3>
+                        <p class="text-sm text-gray-600">Kesan jenjang & ramping</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="bg-sage w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-check-circle text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-lato font-bold text-base">Slim Fit Nyaman</h3>
+                        <p class="text-sm text-gray-600">Kerutan karet elastis di belakang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-lato font-black text-3xl text-center mb-12">Apa Kata Customer</h2>
+            
+            <div class="relative">
+                <div class="carousel-container flex space-x-4 overflow-x-auto pb-4" id="testimonial-carousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-gradient-to-br from-cream to-orange-50 p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pinimg.com/736x/85/a3/64/85a364903e1a59cfedd68e1dc32f202b.jpg" 
+                                 alt="riana" 
+                                 class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <p class="font-lato font-bold">Riana</p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            Bahan adem, potongan pas. Puas ✨
+                        </p>
+                        <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbk4-maqsq49b7tmc70.webp" 
+                             alt="Review" 
+                             class="w-20 h-20 object-cover rounded cursor-pointer hover:opacity-80"
+                             onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-7rbk4-maqsq49b7tmc70.webp')">
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-gradient-to-br from-cream to-orange-50 p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pinimg.com/736x/04/03/c1/0403c15bbb473a3eb0e98fff4b88e0e2.jpg" 
+                                 alt="ita" 
+                                 class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <p class="font-lato font-bold">Ita</p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            Ukuran pas, kualitas top 👌
+                        </p>
+                        <img src="https://down-id.img.susercontent.com/file/id-11134103-7ra0l-mbyvaniycwi86a.webp" 
+                             alt="Review" 
+                             class="w-20 h-20 object-cover rounded cursor-pointer hover:opacity-80"
+                             onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-7ra0l-mbyvaniycwi86a.webp')">
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-gradient-to-br from-cream to-orange-50 p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pinimg.com/736x/ca/07/09/ca07097de9245bcbdd52686cd1ad932e.jpg" 
+                                 alt="fitri" 
+                                 class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <p class="font-lato font-bold">Fitri</p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            Jahitan rapi, slim fit. Recommended 💯
+                        </p>
+                        <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbke-mar254jrn0t537.webp" 
+                             alt="Review" 
+                             class="w-20 h-20 object-cover rounded cursor-pointer hover:opacity-80"
+                             onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-7rbke-mar254jrn0t537.webp')">
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 bg-gradient-to-br from-cream to-orange-50 p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pinimg.com/736x/43/6b/30/436b30945955ec8bea9c4a80eb486557.jpg" 
+                                 alt="vina" 
+                                 class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <p class="font-lato font-bold">Vina</p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-3">
+                            Worth it! Bahan adem, kualitas top ⭐
+                        </p>
+                        <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbk3-mav6lrl9ckok96.webp" 
+                             alt="Review" 
+                             class="w-20 h-20 object-cover rounded cursor-pointer hover:opacity-80"
+                             onclick="openLightbox('https://down-id.img.susercontent.com/file/id-11134103-7rbk3-mav6lrl9ckok96.webp')">
+                    </div>
+                </div>
+                
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                    <span class="carousel-dot" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-20 bg-gradient-to-br from-cream to-orange-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-lato font-black text-3xl text-center mb-12">Pesan Sekarang</h2>
+            
+            <div class="glass-effect rounded-lg p-8">
+                <div class="mb-6">
+                    <h3 class="font-lato font-bold text-xl mb-2">Pilih Warna</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="color-variants">
+                        <!-- Color variants will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- OrderOnline Embed Form -->
+                <div class="ooef">
+                    <form class="orderonline-embed-form" data-username="mila" data-product-slug="whispie-womens-shirt" data-product-id="68a5ac431fd8f7c71b080495" id="oo-embed-form-whispie-womens-shirt-8137" data-origin="orderonline">
+                        <div class="ooef-loader">
+                            <style>
+                                .ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}
+                                @keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                @-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}
+                                .ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}
+                                .ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #87a96b;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}
+                                .ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}
+                                @-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                                @keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}
+                            </style>
+                            <div aria-live="polite" role="status">
+                                <div>Loading...</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky CTA -->
+    <button class="sticky-cta bg-sage text-white px-6 py-3 rounded-full shadow-lg flex items-center">
+        <i class="fas fa-shopping-cart mr-2"></i>
+        Pesan Sekarang
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <img src="" alt="Preview" class="max-w-full max-h-full">
+    </div>
+
+    <!-- Social Proof Popup -->
+    <div id="social-proof" class="fixed top-4 right-4 bg-white shadow-lg rounded-lg p-4 max-w-sm hidden">
+        <div class="flex items-center">
+            <img src="https://i.pinimg.com/736x/43/6b/30/436b30945955ec8bea9c4a80eb486557.jpg" 
+                 alt="Customer" 
+                 class="w-10 h-10 rounded-full mr-3">
+            <div>
+                <p class="text-sm font-bold" id="customer-name">Sarah</p>
+                <p class="text-xs text-gray-600" id="customer-action">baru saja memesan Whispie Women's Shirt</p>
+                <p class="text-xs text-gray-400" id="customer-time">5 menit yang lalu</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('close-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+
+        // Smooth scroll
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Image gallery
+        function changeImage(src, element) {
+            document.getElementById('main-image').src = src;
+            document.querySelectorAll('.grid img').forEach(img => {
+                img.classList.remove('opacity-50');
+            });
+            element.classList.add('opacity-50');
+        }
+
+        // Color selection
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Countdown timer
+        function startCountdown() {
+            let timeLeft = 60 * 60; // 1 hour in seconds
+            
+            const updateTimer = () => {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                document.getElementById('countdown').textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft > 0) {
+                    timeLeft--;
+                } else {
+                    clearInterval(timer);
+                }
+            };
+            
+            updateTimer();
+            const timer = setInterval(updateTimer, 1000);
+        }
+
+        // Lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.querySelector('img').src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.tagName === 'IMG') {
+                document.getElementById('lightbox').classList.remove('active');
+            }
+        }
+
+        // Testimonial carousel
+        let currentSlide = 0;
+        const carousel = document.getElementById('testimonial-carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            const slideWidth = carousel.children[0].offsetWidth;
+            carousel.scrollLeft = currentSlide * slideWidth;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-scroll testimonials
+        setInterval(() => {
+            const maxSlides = Math.min(3, carousel.children.length - 1);
+            currentSlide = (currentSlide + 1) % maxSlides;
+            updateCarousel();
+        }, 5000);
+
+        // Social proof popup
+        const customers = ['Sarah', 'Maya', 'Dina', 'Fitri', 'Sari', 'Rina', 'Dewi', 'Lestari', 'Putri', 'Indira'];
+        const cities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Bekasi', 'Tangerang', 'Depok', 'Semarang', 'Palembang', 'Makassar'];
+
+        function showSocialProof() {
+            const popup = document.getElementById('social-proof');
+            const name = customers[Math.floor(Math.random() * customers.length)];
+            const city = cities[Math.floor(Math.random() * cities.length)];
+            const time = Math.floor(Math.random() * 15) + 1;
+            
+            document.getElementById('customer-name').textContent = `${name} dari ${city}`;
+            document.getElementById('customer-time').textContent = `${time} menit yang lalu`;
+            
+            popup.classList.remove('hidden');
+            popup.classList.add('social-proof-popup');
+            
+            setTimeout(() => {
+                popup.classList.add('fade-out');
+                setTimeout(() => {
+                    popup.classList.add('hidden');
+                    popup.classList.remove('fade-out');
+                }, 500);
+            }, 5000);
+        }
+
+        // Initialize
+        startCountdown();
+        setTimeout(showSocialProof, 3000);
+        setInterval(showSocialProof, 8000);
+
+        // Populate color variants
+        const colors = [
+            { name: 'Hitam', image: 'https://down-id.img.susercontent.com/file/id-11134207-7rbka-maldmrc1j0m197@resize_w450_nl.webp' },
+            { name: 'White', image: 'https://down-id.img.susercontent.com/file/id-11134207-7rbk1-maldp40janhn27@resize_w450_nl.webp' },
+            { name: 'Baby Pink', image: 'https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mcnl58rzl1kf8c@resize_w450_nl.webp' },
+            { name: 'Navy', image: 'https://down-id.img.susercontent.com/file/id-11134207-7rbke-maldmrc1kf6h99@resize_w450_nl.webp' },
+            { name: 'Coffee', image: 'https://down-id.img.susercontent.com/file/id-11134207-7rbke-maldp40jdgmj06@resize_w450_nl.webp' },
+            { name: 'Maroon', image: 'https://down-id.img.susercontent.com/file/id-11134207-7rbk2-maldmrc1ltqx8d@resize_w450_nl.webp' },
+            { name: 'Ivory', image: 'https://down-id.img.susercontent.com/file/id-11134207-7rbk3-maldp40jc223b1@resize_w450_nl.webp' },
+            { name: 'Abu Tua', image: 'https://down-id.img.susercontent.com/file/id-11134207-7rbk4-mai42qtr8w0u45@resize_w450_nl.webp' },
+            { name: 'Soft Blue', image: 'https://down-id.img.susercontent.com/file/id-11134207-7ra0q-mcnl58rzmg4v28@resize_w450_nl.webp' }
+        ];
+
+        const colorContainer = document.getElementById('color-variants');
+        colors.forEach(color => {
+            const div = document.createElement('div');
+            div.className = 'color-option bg-white p-2 rounded-lg shadow cursor-pointer';
+            div.innerHTML = `
+                <img src="${color.image}" alt="${color.name}" class="w-full h-32 object-cover rounded">
+                <p class="text-center text-sm mt-2">${color.name}</p>
+            `;
+            div.addEventListener('click', () => {
+                document.querySelectorAll('#color-variants .color-option').forEach(opt => opt.classList.remove('active'));
+                div.classList.add('active');
+            });
+            colorContainer.appendChild(div);
+        });
+    </script>
+
+    <!-- OrderOnline Script -->
+    <script>
+        if (typeof xLogError != 'function') {
+            var xLogError = function (error) {
+                var req = new XMLHttpRequest();
+                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                req.open('POST', 'https://api.orderonline.id/log', true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                req.send(params);
+            };
+        }
+        try {
+            if (typeof xEmbedScript != 'function') {
+                var xEmbedScript = function () {
+                    !function(w, d, e, v, id, t, s) {
+                        if (d.getElementById(id)) return;
+                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                };
+            }
+            if (typeof xEmbedInit != 'function') {
+                var xEmbedInit = function (w, n) {
+                    if (w.ooe) return;
+                    n = w.ooe = function() {
+                        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    };
+                    if (!w._ooe) w._ooe = n;
+                    n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                };
+            }
+            xEmbedInit(window);
+            ooe('setup', 'redirect', 'https://mila.orderonline.id');
+            ooe('init', '5f1a7b8fa9bf807da24d83bb', '68a5ac431fd8f7c71b080495', '68a5ac431fd8f7c71b080496', 'oo-embed-form-whispie-womens-shirt-8137', {
+                "mode":"page",
+                "action":"Klik untuk pemesanan",
+                "title":"Form Pemesanan",
+                "triggerPixel":true,
+                "triggerGtm":true
+            });
+            if (!window.jQuery) {
+                !function(w, d, e, v, id, t, s) {
+                    if (d.getElementById(id)) return;
+                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                    t.addEventListener('load', xEmbedScript);
+                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+            } else {
+                xEmbedScript();
+            }
+        } catch (e) {
+            xLogError(e);
+            throw e;
+        }
+    </script>
+</body>
+</html>
